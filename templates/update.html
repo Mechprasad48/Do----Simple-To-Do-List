@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container my-4">
+        <h3>Update Todo</h3>
+      <form action="/" method="POST">
+        <div class="mb-5">
+          <label for="title" class="form-label">Add Task</label>
+          <input type="text" class="form-control" name="title" id="title" value="{{alltodo.title}}"aria-describedby = "emailHelp">
+          <div id="emailHelp" class="form-text" >Change the world by being yourself...</div>
+        </div>
+        <div class="mb-3 ">
+          <label for="des" class="form-label">Task Description</label>
+          <input type="text" class="form-control" name="des" id="des" value="{{alltodo.des}}">
+        </div>
+        <!-- <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1"></label>
+        </div> -->
+        <button type="submit" class="btn btn-primary my-3">Update</button>
+      </form>
+    </div>
+    <!-- <div class="container my-3 mr-2">
+      <table class="table my-3">
+        <thead>
+          
+        </thead>
+        <tbody>
+          <h3><strong>Schedule Table</strong></h3>
+          {% if alltodo|length==0 %}
+            <br>
+            
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">Welcome!!!</h4>
+              <p>Add Your first task to complete</p>
+            </div>  
+                <br>
+                
+            {% else %}
+              
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Time</th>
+              <th scope="col">Action </th>
+            </tr>
+          {% endif %}
+          
+          {% for todo in alltodo %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{todo.title}}</td>
+            <td>{{todo.des}}</td>
+            <td>{{todo.date4}}</td>
+            <td>
+              <a href="/update/{{todo.no}}" type="button" class= "btn btn-outline-dark btn-sm mx-1">Update</button>
+              <a href="/delete/{{todo.no}}" type="button" class= "btn btn-outline-dark btn-sm mx-1">Delete</button>
+            </td>
+          </tr>
+          {% endfor %}
+          
+          
+        </tbody>
+      </table>
+    </div> -->
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+{% endblock body %}
+
+
+
+
+
+<!-- Template inheritance used to store common thing in one file if you want to chage in file thier is no need to change in all file -->
